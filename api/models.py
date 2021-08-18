@@ -1,3 +1,11 @@
 from django.db import models
 
 # Create your models here.
+class Spending(models.Model):
+    date = models.DateTimeField()
+    amount = models.IntegerField()
+    currency = models.CharField(max_length=3) #TODO: extract currency into a separate model
+    description = models.CharField(max_length=30)
+    
+    def __str__(self):
+        return f'{self.amount}{self.currency} | {self.description}'
