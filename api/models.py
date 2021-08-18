@@ -1,6 +1,5 @@
 from django.db import models
 
-# Create your models here.
 class Spending(models.Model):
     date = models.DateTimeField()
     amount = models.IntegerField()
