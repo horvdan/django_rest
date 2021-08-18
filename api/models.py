@@ -1,8 +1,9 @@
+from datetime import datetime
 from django.db import models
 
 class Spending(models.Model):
-    date = models.DateTimeField()
-    amount = models.IntegerField()
+    date = models.DateTimeField(default=datetime.now)
+    amount = models.PositiveIntegerField()
     currency = models.CharField(max_length=3) #TODO: extract currency into a separate model
     description = models.CharField(max_length=30)
     
