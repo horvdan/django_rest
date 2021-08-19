@@ -18,10 +18,9 @@ from api.views import SpendingAPI
 from django.contrib import admin
 from django.urls import path
 
-
 router = DefaultRouter()
 router.register(r'spending', SpendingAPI)
 
-urlpatterns = [
-    path('admin/', admin.site.urls)
-] + router.urls
+admin_url = path('admin/', admin.site.urls)
+
+urlpatterns = [admin_url] + router.urls
